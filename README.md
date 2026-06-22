@@ -55,7 +55,7 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 
 ## 🏦 Bancos soportados
 
-`BBVA` · `BTF` · `Galicia` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA`
+`BBVA` · `BTF` · `Galicia` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop`
 
 > ¿Falta tu banco? Lo incorporamos: enviá 2–3 extractos PDF de muestra a [hello@marvaq.com](mailto:hello@marvaq.com).
 
