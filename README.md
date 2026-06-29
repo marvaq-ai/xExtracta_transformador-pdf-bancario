@@ -2,9 +2,11 @@
 
 # 🧾 xExtracta
 
-**Convertí extractos bancarios en PDF a planillas de Excel, de forma automática y 100% local.**
+**Convertí extractos bancarios en PDF a planillas de Excel —con imputación contable sugerida— de forma automática y 100% local.**
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?logo=windows&logoColor=white)
+![Bancos](https://img.shields.io/badge/Bancos-10-1565C0)
+![Imputación contable](https://img.shields.io/badge/Imputaci%C3%B3n%20contable-autom%C3%A1tica-6A1B9A)
 ![Procesamiento local](https://img.shields.io/badge/Procesamiento-100%25%20local-2E7D32)
 ![Licencia](https://img.shields.io/badge/Licencia-Propietaria-red)
 
@@ -20,6 +22,7 @@ Un producto de **Marvaq** · [hello@marvaq.com](mailto:hello@marvaq.com)
 
 - [Descripción general](#-descripción-general)
 - [Características](#-características)
+- [Imputación contable automática](#-imputación-contable-automática)
 - [Bancos soportados](#-bancos-soportados)
 - [Descarga e instalación](#-descarga-e-instalación)
 - [Cómo se usa](#-cómo-se-usa)
@@ -34,7 +37,9 @@ Un producto de **Marvaq** · [hello@marvaq.com](mailto:hello@marvaq.com)
 
 **xExtracta** es una aplicación de escritorio para **Windows** que automatiza la conversión de **extractos bancarios en PDF a planillas de Excel**. Todo el procesamiento ocurre **de forma local, en tu propia computadora**: seleccionás una carpeta con los PDF y obtenés un archivo Excel por banco, listo para trabajar.
 
-Está pensada para **contadores independientes y estudios contables** que necesitan procesar grandes volúmenes de movimientos bancarios sin cargarlos a mano.
+Pero va un paso más allá de la simple extracción: **cada movimiento sale con una cuenta contable sugerida**, para que arranques desde un borrador ya clasificado en vez de una planilla en blanco.
+
+Está pensada para **contadores independientes y estudios contables** que necesitan procesar grandes volúmenes de movimientos bancarios sin cargarlos —ni clasificarlos— a mano.
 
 > **Principio clave:** el contenido de tus extractos bancarios **nunca sale de tu equipo**. La aplicación no sube, almacena ni transmite los datos de tus movimientos.
 
@@ -43,6 +48,7 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 ## ✨ Características
 
 - 📄 **Conversión PDF → Excel**: un archivo `.xlsx` por banco, con fechas e importes en formato reconocible por Excel.
+- 🧮 **Imputación contable sugerida**: cada movimiento viene con su cuenta contable propuesta en una columna aparte. [Ver detalle ↓](#-imputación-contable-automática)
 - 🔒 **Procesamiento 100% local**: los datos bancarios se trabajan solo en tu equipo.
 - 🔑 **Licencia por equipo**: una licencia activa por computadora, con **tolerancia offline** para seguir trabajando sin conexión por unos días.
 - 🎁 **Prueba gratuita** autogestionada desde la propia app.
@@ -53,9 +59,39 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 
 ---
 
+## 🧮 Imputación contable automática
+
+xExtracta no solo extrae los movimientos: los **pre-imputa**. Cada fila del Excel incluye una columna **`Imputación`** con la cuenta contable sugerida, para que el trabajo más tedioso después de la extracción —clasificar movimiento por movimiento— ya venga adelantado.
+
+### 🎯 Honesto por diseño
+
+Una imputación **confiada pero equivocada es peor que un casillero vacío**: te obliga a descubrir y deshacer el error más tarde, cuando ya confiaste en él. Por eso xExtracta sugiere una cuenta **solo cuando el movimiento es inequívoco**. Cuando no lo es, marca el casillero como *"a clasificar"* o lo deja señalado para revisión, en lugar de inventar una cuenta para rellenar.
+
+El resultado: vos mantenés el control. La imputación es un **punto de partida revisable, no un reemplazo de tu criterio profesional** —y nunca te mete una clasificación inventada que tengas que ir a cazar después.
+
+### 🇦🇷 Entiende el vocabulario bancario argentino
+
+Reconoce y clasifica los movimientos típicos de los extractos locales, con sus distintas formas de nombrarlos según el banco:
+
+- **Impuesto Ley 25.413** sobre débitos y créditos
+- **Percepciones y retenciones de IIBB**, regímenes **SIRCREB** y **ARBA**
+- **Retenciones y percepciones de IVA y Ganancias**
+- **Comisiones y gastos bancarios**, e **IVA sobre comisiones** (crédito fiscal del cliente)
+- **Acreditaciones de tarjetas** (Visa, Cabal, Maestro, Fiserv/First Data, Posnet) → **Deudores por ventas**
+- **Transferencias** a terceros y **entre cuentas propias** (las distingue: las propias no impactan resultado)
+- **Débitos automáticos**, **impuesto de sellos**, **sueldos y honorarios**, **intereses**, **plazos fijos** y más
+
+### 🏦 Afinado banco por banco
+
+Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`, `e/ cuentas propias`, `IMP DEB TASA GRAL`…). La imputación está **calibrada y validada banco por banco, sobre miles de movimientos reales**, para que un mismo concepto caiga siempre en la misma cuenta sin importar cómo lo escriba cada entidad.
+
+> 💡 El resultado es un Excel donde la **mayoría de los movimientos ya viene clasificado**, y lo que queda sin clasificar está **claramente señalado** para que lo resuelvas en segundos.
+
+---
+
 ## 🏦 Bancos soportados
 
-`BBVA` · `BTF` · `Galicia` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop`
+`BBVA` · `BTF` · `Galicia` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop` · `Hipotecario`
 
 > ¿Falta tu banco? Lo incorporamos: enviá 2–3 extractos PDF de muestra a [hello@marvaq.com](mailto:hello@marvaq.com).
 
@@ -63,11 +99,12 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 
 ## ⬇️ Descarga e instalación
 
-1. Descargá la última versión desde **[xextracta.marvaq.com](https://xextracta.marvaq.com/)**.
-2. **No requiere instalación**: funciona con doble clic sobre `xExtracta.exe`.
-3. **Requisitos:** Windows 10 u 11 (64 bits).
+1. Descargá el instalador desde **[xextracta.marvaq.com](https://xextracta.marvaq.com/)**.
+2. Ejecutá **`xExtracta-Setup.exe`** y seguí los pasos del asistente de instalación.
+3. Una vez instalado, abrí **xExtracta** desde el acceso directo en el escritorio o el menú Inicio.
+4. **Requisitos:** Windows 10 u 11 (64 bits).
 
-> **Si Windows muestra un aviso al abrirlo:** como la aplicación es nueva, es posible que SmartScreen muestre un cartel de *"editor desconocido"*. Es normal y no significa que el archivo sea peligroso. Hacé clic en **Más información** y luego en **Ejecutar de todas formas**.
+> **Si Windows muestra un aviso al instalarlo:** como la aplicación es nueva, es posible que SmartScreen muestre un cartel de *"editor desconocido"*. Es normal y no significa que el archivo sea peligroso. Hacé clic en **Más información** y luego en **Ejecutar de todas formas**.
 
 ---
 
@@ -75,7 +112,7 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 
 1. Abrí **xExtracta** y activá tu licencia (o pedí la prueba gratuita).
 2. Presioná **Seleccionar carpeta y procesar** y elegí la carpeta a convertir.
-3. Al finalizar, se genera un **Excel (`.xlsx`) por banco** dentro de la carpeta de cada banco.
+3. Al finalizar, se genera un **Excel (`.xlsx`) por banco** —con la columna **`Imputación`** incluida— dentro de la carpeta de cada banco.
 
 **Para que el resultado sea correcto, organizá los PDF así:**
 
@@ -99,7 +136,7 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 
 ## 🔐 Seguridad y privacidad
 
-- 🛡️ **El contenido de tus extractos bancarios se procesa únicamente de forma local** y nunca se transmite ni se sube a ningún servidor.
+- 🛡️ **El contenido de tus extractos bancarios se procesa únicamente de forma local** y nunca se transmite ni se sube a ningún servidor. La imputación contable también se calcula **en tu propio equipo**.
 - 🔑 Las **contraseñas de los PDF** se usan de manera transitoria, solo para abrir el archivo durante el procesamiento: **no se almacenan ni se transmiten**.
 - 📡 Para validar y administrar la licencia, la aplicación transmite **únicamente datos de licencia** (la clave, un identificador técnico del equipo y la versión de la app) y, al pedir prueba o suscripción, tu **nombre y correo**. En ningún caso viaja el contenido de los extractos.
 - 🧾 El tratamiento de datos se realiza conforme a la **Ley 25.326** de Protección de Datos Personales (Argentina), bajo el control de la **Agencia de Acceso a la Información Pública (AAIP)**. Podés ejercer tus derechos de acceso, rectificación y supresión escribiendo a [hello@marvaq.com](mailto:hello@marvaq.com).
