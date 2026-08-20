@@ -5,7 +5,7 @@
 **Convertí extractos bancarios en PDF a planillas de Excel —con imputación contable sugerida— de forma automática y 100% local.**
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?logo=windows&logoColor=white)
-![Bancos](https://img.shields.io/badge/Bancos-10-1565C0)
+![Bancos](https://img.shields.io/badge/Bancos-13-1565C0)
 ![Imputación contable](https://img.shields.io/badge/Imputaci%C3%B3n%20contable-autom%C3%A1tica-6A1B9A)
 ![Procesamiento local](https://img.shields.io/badge/Procesamiento-100%25%20local-2E7D32)
 ![Licencia](https://img.shields.io/badge/Licencia-Propietaria-red)
@@ -80,6 +80,7 @@ Reconoce y clasifica los movimientos típicos de los extractos locales, con sus 
 - **Acreditaciones de tarjetas** (Visa, Cabal, Maestro, Fiserv/First Data, Posnet) → **Deudores por ventas**
 - **Transferencias** a terceros y **entre cuentas propias** (las distingue: las propias no impactan resultado)
 - **Débitos automáticos**, **impuesto de sellos**, **sueldos y honorarios**, **intereses**, **plazos fijos** y más
+- **Billeteras virtuales**: rendimientos del saldo remunerado, dinero reservado en objetivos de ahorro y pagos con QR en comercios
 
 ### 🏦 Afinado banco por banco
 
@@ -91,7 +92,17 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 
 ## 🏦 Bancos soportados
 
-`BBVA` · `BTF` · `Galicia` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop` · `Hipotecario`
+`BBVA` · `BTF` · `Galicia` · `Galicia +` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop` · `Hipotecario` · `ICBC` · `Mercado Pago`
+
+**Novedades de la versión 2.1.0:**
+
+| | |
+|---|---|
+| 💜 **Mercado Pago** | Resumen de cuenta en pesos de la billetera (CVU): pagos con QR, transferencias, rendimientos del saldo y dinero reservado. |
+| 🔵 **Galicia +** (ex HSBC) | Extracto de cuenta corriente en el formato que Galicia mantiene de HSBC, con su detalle de contraparte y CUIT. |
+| 🔴 **ICBC** | Resumen mensual de cuenta corriente. |
+
+> 💡 **No hace falta escribir el nombre exacto de la carpeta.** xExtracta reconoce las formas en que la gente los escribe: `Nacion`, `Provincia`, `BIP`, `Frances`, `MP`, `Mercadopago`, `HSBC`, `Galicia más`… y tolera acentos, el "Banco" adelante y errores de tipeo leves. La lista completa de nombres aceptados está en el botón **Bancos** de la aplicación.
 
 > ¿Falta tu banco? Lo incorporamos: enviá 2–3 extractos PDF de muestra a [hello@marvaq.com](mailto:hello@marvaq.com).
 
@@ -116,7 +127,7 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 
 **Para que el resultado sea correcto, organizá los PDF así:**
 
-- **Una carpeta por banco**, nombrada **exactamente** como el banco (`BBVA`, `Galicia`, `Nación`, …).
+- **Una carpeta por banco**, nombrada como el banco (`BBVA`, `Galicia`, `Nación`, …). No hace falta que sea exacto: también toma `Nacion`, `Banco Provincia`, `MP`, `HSBC` y variantes por el estilo.
 - **Máximo 12 PDF por carpeta** (uno por mes).
 - Numerá los archivos con **cero adelante** para que se ordenen bien: `01, 02, … 11, 12` (un `1, 2, … 11` se desordena).
 - **PDF con contraseña** → agregá un archivo `Contraseña.txt` en la carpeta, con solo la contraseña.
