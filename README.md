@@ -94,6 +94,15 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 
 `BBVA` · `BTF` · `Galicia` · `Galicia +` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop` · `Hipotecario` · `ICBC` · `Mercado Pago`
 
+**Novedades de la versión 2.1.2:**
+
+| | |
+|---|---|
+| 🔷 **Patagonia: los dos formatos** | Ahora también lee la exportación *"Movimientos de Cuenta"* del homebanking, además del resumen mensual. Antes ese archivo no devolvía ningún movimiento. |
+| 🔷 **Débito y crédito verificados contra el saldo** | La columna ya no depende de una lista de palabras: se lee la posición real en el PDF y se **verifica contra el saldo que imprime el banco**. Si la aritmética la desmiente, se corrige sola. Un concepto que el banco estrene mañana ya no puede caer del lado equivocado. |
+| 🔷 **Una cuenta por planilla** | El *"Estado de cuentas unificado"* trae **todas** las cuentas del titular —y la segunda suele ser en **dólares**—. Antes se sumaban las dos monedas en la misma columna. [Ver cómo elegir la cuenta ↓](#-cómo-se-usa) |
+| 🔷 **Menos filas que no eran movimientos** | Las secciones de detalle que el resumen imprime al final (débitos automáticos ya listados, y los **rechazados por falta de fondos**, que nunca ocurrieron) ya no entran como movimientos. |
+
 **Novedades de la versión 2.1.0:**
 
 | | |
@@ -101,6 +110,8 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 | 💜 **Mercado Pago** | Resumen de cuenta en pesos de la billetera (CVU): pagos con QR, transferencias, rendimientos del saldo y dinero reservado. |
 | 🔵 **Galicia +** (ex HSBC) | Extracto de cuenta corriente en el formato que Galicia mantiene de HSBC, con su detalle de contraparte y CUIT. |
 | 🔴 **ICBC** | Resumen mensual de cuenta corriente. |
+
+> 🏦 **Extractos con varias cuentas — Patagonia y Macro.** El resumen de Patagonia lista todas las cuentas del titular: la operativa en pesos y, casi siempre, una cuenta especial **en dólares**. Sumarlas en una misma planilla daría dos monedas mezcladas y una columna de saldo sin sentido, así que xExtracta exporta **una sola cuenta**: sin `CuentaObjetivo.txt` toma la primera (la de pesos), y con el archivo en la carpeta toma la que le indiques. Si el archivo pide una cuenta que ese PDF no tiene, te lo avisa y nombra las que sí están, en lugar de exportar otra en su lugar.
 
 > 💡 **No hace falta escribir el nombre exacto de la carpeta.** xExtracta reconoce las formas en que la gente los escribe: `Nacion`, `Provincia`, `BIP`, `Frances`, `MP`, `Mercadopago`, `HSBC`, `Galicia más`… y tolera acentos, el "Banco" adelante y errores de tipeo leves. La lista completa de nombres aceptados está en el botón **Bancos** de la aplicación.
 
@@ -131,7 +142,7 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 - **Máximo 12 PDF por carpeta** (uno por mes).
 - Numerá los archivos con **cero adelante** para que se ordenen bien: `01, 02, … 11, 12` (un `1, 2, … 11` se desordena).
 - **PDF con contraseña** → agregá un archivo `Contraseña.txt` en la carpeta, con solo la contraseña.
-- **Extractos con varias cuentas** → agregá un archivo `CuentaObjetivo.txt` indicando una cuenta por ejecución.
+- **Extractos con varias cuentas** (Patagonia, Macro) → xExtracta exporta la **primera** cuenta del PDF, que es la operativa en pesos. Para trabajar otra, agregá un archivo `CuentaObjetivo.txt` con el **número de cuenta**, el **CBU** (con o sin espacios) o **parte del nombre** (por ejemplo `DOLARES`). Una cuenta por ejecución.
 
 > 💡 **Antes de un nuevo proceso, limpiá la carpeta:** xExtracta procesa *todos* los PDF que encuentre en cada carpeta. Si no quitás los ya procesados, la próxima vez volverá a procesarlos a todos. La guía rápida en PDF (incluida con tu licencia de prueba) explica todo esto en detalle.
 
