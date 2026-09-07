@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧾 xExtracta
+# 🧾 xExtracta®
 
 **Convertí extractos bancarios en PDF a planillas de Excel —con imputación contable sugerida— de forma automática y 100% local.**
 
@@ -13,7 +13,9 @@
 
 Un producto de **Marvaq** · [hello@marvaq.com](mailto:hello@marvaq.com)
 
-### [⬇️ Descargar xExtracta](https://xextracta.marvaq.com/)
+### [⬇️ Descargar xExtracta®](https://xextracta.marvaq.com/)
+
+<sub>**xExtracta®** es una marca registrada de Marvaq ante el INPI (Argentina).</sub>
 
 </div>
 
@@ -37,7 +39,7 @@ Un producto de **Marvaq** · [hello@marvaq.com](mailto:hello@marvaq.com)
 
 ## 🎯 Descripción general
 
-**xExtracta** es una aplicación de escritorio para **Windows** que automatiza la conversión de **extractos bancarios en PDF a planillas de Excel**. Todo el procesamiento ocurre **de forma local, en tu propia computadora**: seleccionás una carpeta con los PDF y obtenés un archivo Excel por banco, listo para trabajar.
+**xExtracta®** es una aplicación de escritorio para **Windows** que automatiza la conversión de **extractos bancarios en PDF a planillas de Excel**. Todo el procesamiento ocurre **de forma local, en tu propia computadora**: seleccionás una carpeta con los PDF y obtenés un archivo Excel por banco, listo para trabajar.
 
 Pero va un paso más allá de la simple extracción: **cada movimiento sale con una cuenta contable sugerida**, para que arranques desde un borrador ya clasificado en vez de una planilla en blanco.
 
@@ -222,6 +224,8 @@ Abrí **xExtracta**, activá tu licencia (o pedí la prueba gratuita) y seguí l
 
 **Software propietario.** © Marvaq. Todos los derechos reservados.
 Protegido por la **Ley 11.723** de Propiedad Intelectual (Argentina). Prohibida su reproducción, distribución, ingeniería inversa o reventa sin autorización expresa del titular.
+
+**xExtracta® es una marca registrada** de Marvaq ante el **Instituto Nacional de la Propiedad Industrial (INPI)** de la República Argentina. El uso del nombre, el logo o cualquier signo confundible con la marca requiere autorización expresa y por escrito del titular. Nada de lo publicado en este repositorio concede licencia alguna sobre la marca.
 
 ---
 
