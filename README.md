@@ -7,6 +7,7 @@
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?logo=windows&logoColor=white)
 ![Bancos](https://img.shields.io/badge/Bancos-13-1565C0)
 ![Imputación contable](https://img.shields.io/badge/Imputaci%C3%B3n%20contable-autom%C3%A1tica-6A1B9A)
+![Plan de cuentas](https://img.shields.io/badge/Plan%20de%20cuentas-propio-0F5132)
 ![Procesamiento local](https://img.shields.io/badge/Procesamiento-100%25%20local-2E7D32)
 ![Licencia](https://img.shields.io/badge/Licencia-Propietaria-red)
 
@@ -23,6 +24,7 @@ Un producto de **Marvaq** · [hello@marvaq.com](mailto:hello@marvaq.com)
 - [Descripción general](#-descripción-general)
 - [Características](#-características)
 - [Imputación contable automática](#-imputación-contable-automática)
+- [Tu propio plan de cuentas](#-tu-propio-plan-de-cuentas)
 - [Bancos soportados](#-bancos-soportados)
 - [Descarga e instalación](#-descarga-e-instalación)
 - [Cómo se usa](#-cómo-se-usa)
@@ -49,13 +51,15 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 
 - 📄 **Conversión PDF → Excel**: un archivo `.xlsx` por banco, con fechas e importes en formato reconocible por Excel.
 - 🧮 **Imputación contable sugerida**: cada movimiento viene con su cuenta contable propuesta en una columna aparte. [Ver detalle ↓](#-imputación-contable-automática)
+- 📒 **Tu propio plan de cuentas**: cargá el plan de tu cliente y el Excel sale con **sus códigos**, no con el vocabulario de xExtracta. [Ver detalle ↓](#-tu-propio-plan-de-cuentas)
+- 🏢 **Perfiles de empresa**: lo configurás una vez y lo reusás siempre, sin volver a mapear.
 - 🔒 **Procesamiento 100% local**: los datos bancarios se trabajan solo en tu equipo.
 - 🔑 **Licencia por equipo**: una licencia activa por computadora, con **tolerancia offline** para seguir trabajando sin conexión por unos días.
 - 🎁 **Prueba gratuita** autogestionada desde la propia app.
 - 💳 **Suscripción mensual** simple a través de MercadoPago.
 - ♻️ **Recuperación de licencia** por correo electrónico.
 - 🔐 **Soporte de PDF protegidos con contraseña** y de **extractos con varias cuentas**.
-- 🔔 **Aviso de actualizaciones** cuando hay una nueva versión disponible.
+- 🔄 **Actualización en un clic**: cuando hay versión nueva, la app la baja, la verifica y la instala sola. Sin asistente y sin perder tu licencia ni tu configuración.
 
 ---
 
@@ -90,9 +94,56 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 
 ---
 
+## 📒 Tu propio plan de cuentas
+
+La imputación automática sale con el vocabulario de xExtracta (`Comisiones y gastos bancarios`). Útil, pero después había que **traducirlo a las cuentas de tu cliente, movimiento por movimiento**, antes de poder cargar el asiento.
+
+Desde la **versión 2.2.1** eso se terminó: cargás el plan de cuentas exportado del sistema contable de tu cliente (`.xlsx` o `.xls`) y **el Excel sale con sus códigos y sus denominaciones**, en dos columnas nuevas junto a `Imputación`.
+
+| Fecha | Descripción | Débito | Imputación | Cuenta | Denominación |
+|---|---|---|---|---|---|
+| 03/09 | COMIS.TRANSF.NE | 1.250,00 | Comisiones y gastos bancarios | `5.2.03.000` | Comisiones Bancarias |
+| 03/09 | IMP LEY 25413 | 42,15 | Impuesto Ley 25.413 (débitos) | `5.2.06.000` | Impuesto al Debito/Credito |
+
+> La columna `Imputación` **no se reemplaza**: se conserva para que puedas auditar de dónde salió cada cuenta.
+
+### ⚡ No mapeás 3.000 movimientos: mapeás 31 conceptos, una sola vez
+
+xExtracta trabaja con un vocabulario cerrado de **31 conceptos**. Tu plan puede tener 800 cuentas y tu extracto 3.000 movimientos: la pantalla de configuración igual tiene **31 filas**.
+
+Y no arrancan vacías. **xExtracta propone la cuenta de cada concepto y deja el casillero completo.** Contra el plan real de un cliente (238 cuentas) completó **30 de los 31**. Cada precarga viene marcada para que sepas cuál mirar primero:
+
+- **`sugerida`** — hay una cuenta en tu plan que nombra ese concepto.
+- **`razonada`** — tu plan no tiene cuenta propia para eso y se usó una vecina **por criterio contable**. Ejemplo: si no tenés cuenta de *Impuesto de sellos*, va a **Comisiones Bancarias**, porque el sello lo cobra el banco.
+
+Reconoce las formas reales en que un plan escribe las cuentas: `Sellados` para sellos, `Préstamo Bco. Galicia` en singular, las siglas `FCI` · `IIGG` · `SIRCREB`, y la ley del impuesto al cheque escrita `25.413` o `25413`.
+
+### 🏢 Perfiles de empresa: lo hacés una vez y queda
+
+Guardás la configuración con el nombre de la empresa y la próxima vez **la elegís de una lista**. Sin volver a mapear, sin buscar el archivo.
+
+- **Si movés o renombrás el Excel del plan**, el perfil sigue funcionando: guarda una copia del listado de cuentas y te avisa de qué fecha es.
+- **Si el archivo está, manda el archivo**: se relee cada vez. Si tu cliente renombra una cuenta en su sistema, el Excel sale con el nombre nuevo sin que toques nada.
+- **Si una cuenta que tenías asociada ya no existe**, te lo dice y deja la celda vacía. **Nunca escribe un código que no existe.**
+
+> 🔒 **El plan activo no sobrevive al cierre de la app.** Al abrirla no hay ninguno cargado y lo elegís vos: así el plan de una empresa no puede aplicarse a otra sin que te enteres.
+
+> 📌 **Es opcional.** Sin plan de cuentas, el Excel sale exactamente igual que siempre.
+
+---
+
 ## 🏦 Bancos soportados
 
 `BBVA` · `BTF` · `Galicia` · `Galicia +` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop` · `Hipotecario` · `ICBC` · `Mercado Pago`
+
+**Novedades de la versión 2.2.1:**
+
+| | |
+|---|---|
+| 📒 **Tu propio plan de cuentas** | El Excel sale con los códigos de tu cliente, no con el vocabulario de xExtracta. [Ver detalle ↑](#-tu-propio-plan-de-cuentas) |
+| 🏢 **Perfiles de empresa** | Guardás la configuración con el nombre de la empresa y la reusás de una lista. Sigue funcionando aunque muevas el archivo del plan. |
+| 🔢 **Ventana en 3 pasos** | La pantalla principal se lee de arriba a abajo: ❶ plan de cuentas *(opcional)* → ❷ carpeta con los PDF → ❸ resultado. |
+| 💬 **Botón de Soporte** | Mail, WhatsApp y envío de logs en un solo lugar. |
 
 **Novedades de la versión 2.1.2:**
 
@@ -126,15 +177,17 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 3. Una vez instalado, abrí **xExtracta** desde el acceso directo en el escritorio o el menú Inicio.
 4. **Requisitos:** Windows 10 u 11 (64 bits).
 
-> **Si Windows muestra un aviso al instalarlo:** como la aplicación es nueva, es posible que SmartScreen muestre un cartel de *"editor desconocido"*. Es normal y no significa que el archivo sea peligroso. Hacé clic en **Más información** y luego en **Ejecutar de todas formas**.
+> 🔏 **El instalador está firmado digitalmente** a nombre de su titular: al ejecutarlo, Windows verifica que el archivo es auténtico y que nadie lo alteró. Si aun así SmartScreen mostrara un aviso —habitual mientras un certificado acumula reputación—, hacé clic en **Más información** y luego en **Ejecutar de todas formas**.
 
 ---
 
 ## 🧭 Cómo se usa
 
-1. Abrí **xExtracta** y activá tu licencia (o pedí la prueba gratuita).
-2. Presioná **Seleccionar carpeta y procesar** y elegí la carpeta a convertir.
-3. Al finalizar, se genera un **Excel (`.xlsx`) por banco** —con la columna **`Imputación`** incluida— dentro de la carpeta de cada banco.
+Abrí **xExtracta**, activá tu licencia (o pedí la prueba gratuita) y seguí los tres pasos de la pantalla:
+
+1. **❶ Plan de cuentas de la empresa** *(opcional)* — elegí una empresa guardada o cargá el plan de un cliente nuevo. Sin esto, el Excel sale con la imputación de siempre.
+2. **❷ Carpeta con los PDF del banco** — presioná **Elegir carpeta y procesar**. No hace falta que elijas el banco: xExtracta lo reconoce solo.
+3. **❸ Resultado** — al finalizar se genera un **Excel (`.xlsx`) por banco** dentro de la carpeta de ese banco, con la columna **`Imputación`** y, si cargaste un plan, también **`Cuenta`** y **`Denominación`**.
 
 **Para que el resultado sea correcto, organizá los PDF así:**
 
@@ -174,7 +227,9 @@ Protegido por la **Ley 11.723** de Propiedad Intelectual (Argentina). Prohibida 
 
 ## 📬 Contacto
 
-**Marvaq** — [hello@marvaq.com](mailto:hello@marvaq.com)
+**Marvaq** — [hello@marvaq.com](mailto:hello@marvaq.com) · WhatsApp [+54 2964 574351](https://wa.me/5492964574351)
+
+También desde el botón **Soporte** dentro de la aplicación.
 
 <div align="center">
 <sub>Hecho con ☕ en Argentina · Tierra del Fuego</sub>
