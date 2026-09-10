@@ -5,7 +5,7 @@
 **Convertí extractos bancarios en PDF a planillas de Excel —con imputación contable sugerida— de forma automática y 100% local.**
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?logo=windows&logoColor=white)
-![Bancos](https://img.shields.io/badge/Bancos-13-1565C0)
+![Bancos](https://img.shields.io/badge/Bancos-14-1565C0)
 ![Imputación contable](https://img.shields.io/badge/Imputaci%C3%B3n%20contable-autom%C3%A1tica-6A1B9A)
 ![Plan de cuentas](https://img.shields.io/badge/Plan%20de%20cuentas-propio-0F5132)
 ![Procesamiento local](https://img.shields.io/badge/Procesamiento-100%25%20local-2E7D32)
@@ -138,7 +138,11 @@ Guardás la configuración con el nombre de la empresa y la próxima vez **la el
 
 ## 🏦 Bancos soportados
 
-`BBVA` · `BTF` · `Galicia` · `Galicia +` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop` · `Hipotecario` · `ICBC` · `Mercado Pago`
+`BBVA` · `BTF` · `Galicia` · `Galicia +` · `Nación` · `Santander` · `Macro` · `Patagonia` · `PBA` · `Credicoop` · `Hipotecario` · `ICBC` · `Mercado Pago` · `Neuquén`
+
+| | |
+|---|---|
+| 🟢 **Neuquén** (BPN) | Resumen mensual de cuenta corriente en pesos del Banco Provincia del Neuquén. La columna de débito/crédito se lee por posición y se **verifica contra el saldo que imprime el banco en cada fila**. |
 
 **Novedades de la versión 2.2.1:**
 
@@ -168,7 +172,7 @@ Guardás la configuración con el nombre de la empresa y la próxima vez **la el
 
 > 🏦 **Extractos con varias cuentas — Patagonia y Macro.** El resumen de Patagonia lista todas las cuentas del titular: la operativa en pesos y, casi siempre, una cuenta especial **en dólares**. Sumarlas en una misma planilla daría dos monedas mezcladas y una columna de saldo sin sentido, así que xExtracta exporta **una sola cuenta**: sin `CuentaObjetivo.txt` toma la primera (la de pesos), y con el archivo en la carpeta toma la que le indiques. Si el archivo pide una cuenta que ese PDF no tiene, te lo avisa y nombra las que sí están, en lugar de exportar otra en su lugar.
 
-> 💡 **No hace falta escribir el nombre exacto de la carpeta.** xExtracta reconoce las formas en que la gente los escribe: `Nacion`, `Provincia`, `BIP`, `Frances`, `MP`, `Mercadopago`, `HSBC`, `Galicia más`… y tolera acentos, el "Banco" adelante y errores de tipeo leves. La lista completa de nombres aceptados está en el botón **Bancos** de la aplicación.
+> 💡 **No hace falta escribir el nombre exacto de la carpeta.** xExtracta reconoce las formas en que la gente los escribe: `Nacion`, `Provincia`, `BIP`, `Frances`, `MP`, `Mercadopago`, `HSBC`, `Galicia más`, `BPN`, `Neuquen`… y tolera acentos, el "Banco" adelante y errores de tipeo leves. La lista completa de nombres aceptados está en el botón **Bancos** de la aplicación.
 
 > ¿Falta tu banco? Lo incorporamos: enviá 2–3 extractos PDF de muestra a [hello@marvaq.com](mailto:hello@marvaq.com).
 
