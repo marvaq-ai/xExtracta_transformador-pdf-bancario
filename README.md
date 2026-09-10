@@ -100,7 +100,9 @@ Cada banco nombra las mismas cosas distinto (`S/CRED`, `S/CR`, `DB/CR BANCARIOS`
 
 La imputación automática sale con el vocabulario de xExtracta (`Comisiones y gastos bancarios`). Útil, pero después había que **traducirlo a las cuentas de tu cliente, movimiento por movimiento**, antes de poder cargar el asiento.
 
-Desde la **versión 2.2.1** eso se terminó: cargás el plan de cuentas exportado del sistema contable de tu cliente (`.xlsx` o `.xls`) y **el Excel sale con sus códigos y sus denominaciones**, en dos columnas nuevas junto a `Imputación`.
+Desde la **versión 2.2.1** eso se terminó: cargás el plan de cuentas exportado del sistema contable de tu cliente (`.xlsx`, `.xls` o `.pdf`) y **el Excel sale con sus códigos y sus denominaciones**, en dos columnas nuevas junto a `Imputación`.
+
+> **¿PDF?** Sí. Muchos sistemas contables solo dejan imprimir el plan de cuentas, no exportarlo. xExtracta lee ese listado y **deduce del propio código qué cuenta es imputable y cuál es un título**: `1.1.1.02.000 Bancos` es un título porque tiene cuentas colgando debajo, `1.1.1.03.000 Caja de Ahorro` es imputable porque no tiene ninguna. Tiene que ser el PDF que genera el sistema, no una foto ni un escaneo.
 
 | Fecha | Descripción | Débito | Imputación | Cuenta | Denominación |
 |---|---|---|---|---|---|
@@ -124,7 +126,7 @@ Reconoce las formas reales en que un plan escribe las cuentas: `Sellados` para s
 
 Guardás la configuración con el nombre de la empresa y la próxima vez **la elegís de una lista**. Sin volver a mapear, sin buscar el archivo.
 
-- **Si movés o renombrás el Excel del plan**, el perfil sigue funcionando: guarda una copia del listado de cuentas y te avisa de qué fecha es.
+- **Si movés o renombrás el archivo del plan**, el perfil sigue funcionando: guarda una copia del listado de cuentas y te avisa de qué fecha es.
 - **Si el archivo está, manda el archivo**: se relee cada vez. Si tu cliente renombra una cuenta en su sistema, el Excel sale con el nombre nuevo sin que toques nada.
 - **Si una cuenta que tenías asociada ya no existe**, te lo dice y deja la celda vacía. **Nunca escribe un código que no existe.**
 
