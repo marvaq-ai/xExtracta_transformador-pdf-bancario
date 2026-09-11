@@ -85,6 +85,7 @@ Reconoce y clasifica los movimientos típicos de los extractos locales, con sus 
 - **Comisiones y gastos bancarios**, e **IVA sobre comisiones** (crédito fiscal del cliente)
 - **Acreditaciones de tarjetas** (Visa, Cabal, Maestro, Fiserv/First Data, Posnet) → **Deudores por ventas**
 - **Transferencias** a terceros y **entre cuentas propias** (las distingue: las propias no impactan resultado)
+- **Descuento de documentos** (cheques, pagarés, eCheq) → **Documentos descontados**, con sus sellos, intereses e IVA en las filas que corresponden
 - **Débitos automáticos**, **impuesto de sellos**, **sueldos y honorarios**, **intereses**, **plazos fijos** y más
 - **Billeteras virtuales**: rendimientos del saldo remunerado, dinero reservado en objetivos de ahorro y pagos con QR en comercios
 
@@ -111,16 +112,18 @@ Desde la **versión 2.2.1** eso se terminó: cargás el plan de cuentas exportad
 
 > La columna `Imputación` **no se reemplaza**: se conserva para que puedas auditar de dónde salió cada cuenta.
 
-### ⚡ No mapeás 3.000 movimientos: mapeás 31 conceptos, una sola vez
+### ⚡ No mapeás 3.000 movimientos: mapeás 32 conceptos, una sola vez
 
-xExtracta trabaja con un vocabulario cerrado de **31 conceptos**. Tu plan puede tener 800 cuentas y tu extracto 3.000 movimientos: la pantalla de configuración igual tiene **31 filas**.
+xExtracta trabaja con un vocabulario cerrado de **32 conceptos**. Tu plan puede tener 800 cuentas y tu extracto 3.000 movimientos: la pantalla de configuración igual tiene **32 filas**.
 
-Y no arrancan vacías. **xExtracta propone la cuenta de cada concepto y deja el casillero completo.** Contra el plan real de un cliente (238 cuentas) completó **30 de los 31**. Cada precarga viene marcada para que sepas cuál mirar primero:
+Y no arrancan vacías. **xExtracta propone la cuenta de cada concepto y deja el casillero completo.** Contra el plan real de un cliente (238 cuentas) completó **31 de los 32**: el único vacío es *REVISAR*, que no corresponde a ninguna cuenta. Cada precarga viene marcada para que sepas cuál mirar primero:
 
 - **`sugerida`** — hay una cuenta en tu plan que nombra ese concepto.
 - **`razonada`** — tu plan no tiene cuenta propia para eso y se usó una vecina **por criterio contable**. Ejemplo: si no tenés cuenta de *Impuesto de sellos*, va a **Comisiones Bancarias**, porque el sello lo cobra el banco.
 
 Reconoce las formas reales en que un plan escribe las cuentas: `Sellados` para sellos, `Préstamo Bco. Galicia` en singular, las siglas `FCI` · `IIGG` · `SIRCREB`, y la ley del impuesto al cheque escrita `25.413` o `25413`.
+
+**Cuentas de banco en pesos y en dólares.** Cada banco tiene dos casilleros, `Cta Cte en pesos` y `Cta Cte en dólares`, para asociar las dos cuentas corrientes que suele tener un plan real (por ejemplo `ICBC Cta Cte` e `ICBC Cta Cte en Dólares`). Si en tu plan hay una sola cuenta de ese banco en esa moneda, ya viene precargada.
 
 ### 🏢 Perfiles de empresa: lo hacés una vez y queda
 
@@ -143,6 +146,14 @@ Guardás la configuración con el nombre de la empresa y la próxima vez **la el
 | | |
 |---|---|
 | 🟢 **Neuquén** (BPN) | Resumen mensual de cuenta corriente en pesos del Banco Provincia del Neuquén. La columna de débito/crédito se lee por posición y se **verifica contra el saldo que imprime el banco en cada fila**. |
+
+**Novedades de la versión 2.2.3:**
+
+| | |
+|---|---|
+| **Galicia, más fino** | Se imputan los conceptos que antes quedaban para revisar (`SERVICIO PAGO A PROVEEDORES`, `IVA`, `PERCEP. IVA`, `CREDITO DESCUENTO DOCUMENTO`) y se corrigen tres que salían con la cuenta equivocada: el impuesto Ley 25.413 **sobre créditos**, el interés del descuento de documentos y el pago del resumen de la tarjeta. |
+| **Documentos descontados** | Concepto nuevo, el 32: el crédito de un descuento de documentos va a su propia cuenta, no a un préstamo. |
+| **Cuentas de banco por moneda** | El plan de cuentas tiene un casillero en pesos y otro en dólares para cada banco. |
 
 **Novedades de la versión 2.2.1:**
 
