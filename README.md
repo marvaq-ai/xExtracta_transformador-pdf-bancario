@@ -55,6 +55,7 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 - 🧮 **Imputación contable sugerida**: cada movimiento viene con su cuenta contable propuesta en una columna aparte. [Ver detalle ↓](#-imputación-contable-automática)
 - 📒 **Tu propio plan de cuentas**: cargá el plan de tu cliente y el Excel sale con **sus códigos**, no con el vocabulario de xExtracta. [Ver detalle ↓](#-tu-propio-plan-de-cuentas)
 - 🏢 **Perfiles de empresa**: lo configurás una vez y lo reusás siempre, sin volver a mapear.
+- ✅ **Control contra el saldo del banco**: si lo leído no cierra contra el saldo que imprime el banco, el resumen te avisa con el archivo y la fecha donde mirar.
 - 🔒 **Procesamiento 100% local**: los datos bancarios se trabajan solo en tu equipo.
 - 🔑 **Licencia por equipo**: una licencia activa por computadora, con **tolerancia offline** para seguir trabajando sin conexión por unos días.
 - 🎁 **Prueba gratuita** autogestionada desde la propia app.
@@ -146,6 +147,14 @@ Guardás la configuración con el nombre de la empresa y la próxima vez **la el
 | | |
 |---|---|
 | 🟢 **Neuquén** (BPN) | Resumen mensual de cuenta corriente en pesos del Banco Provincia del Neuquén. La columna de débito/crédito se lee por posición y se **verifica contra el saldo que imprime el banco en cada fila**. |
+
+**Novedades de la versión 2.2.4:**
+
+| | |
+|---|---|
+| **Banco Nación, completo** | Había dos tipos de fila que no llegaban al Excel, sin ningún aviso: las de comprobante corto (como un cheque `48HS. CANJE ZONAL` con comprobante `9`) y, desde septiembre de 2024, las que caen a la altura de las marcas que el banco imprime en el margen de cada página (hasta 5 o 6 por página). Ahora entran todas. **Si convertiste extractos de Nación desde septiembre de 2024, volvé a procesarlos.** |
+| **Aviso si el saldo no cierra** | Después de leer cada extracto, los movimientos se verifican contra el saldo que imprime el banco. Si no cierran, el resumen del proceso te avisa con el archivo y la fecha donde mirar. Funciona en los 14 bancos, sin un solo aviso falso contra 71.024 movimientos reales. |
+| **Cheques de Nación imputados** | `48HS. BANCOS` y `48HS. CANJE ZONAL` van a *Cheques pagados* si son débito y a *Valores al cobro* si son crédito. Antes quedaban para revisar. |
 
 **Novedades de la versión 2.2.3:**
 
