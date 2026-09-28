@@ -176,6 +176,15 @@ xExtracta reconoce el emisor solo:
 |---|---|
 | 🟢 **Neuquén** (BPN) | Resumen mensual de cuenta corriente en pesos del Banco Provincia del Neuquén. La columna de débito/crédito se lee por posición y se **verifica contra el saldo que imprime el banco en cada fila**. |
 
+**Novedades de la versión 3.0.0:**
+
+| | |
+|---|---|
+| **Tarjetas Corporativas** | Solapa nueva: los resúmenes de tarjeta corporativa de 10 emisores a Excel, con las cuotas repartidas por mes y la imputación contable. Incluida en el Plan Avanzado y en la prueba gratuita. [Ver detalle ↑](#-tarjetas-corporativas) |
+| **Dos planes** | Básico ($9.000 por mes, extractos bancarios) y Avanzado ($14.500 por mes, suma Tarjetas Corporativas). Con el Básico, te pasás desde la solapa de Tarjetas. [Ver planes ↓](#-prueba-y-suscripción) |
+| **Cancelar desde la app** | El link para cancelar la suscripción está al pie de la ventana de Soporte. |
+| **Menos pedidos de clave** | Si el servidor de licencias no contesta un momento (por ejemplo, mientras se actualiza), la app sigue trabajando sin conexión en vez de pedirte la clave. |
+
 **Novedades de la versión 2.2.4:**
 
 | | |
