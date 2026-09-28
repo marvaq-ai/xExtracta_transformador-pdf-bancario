@@ -8,6 +8,7 @@
 ![Bancos](https://img.shields.io/badge/Bancos-14-1565C0)
 ![Imputación contable](https://img.shields.io/badge/Imputaci%C3%B3n%20contable-autom%C3%A1tica-6A1B9A)
 ![Plan de cuentas](https://img.shields.io/badge/Plan%20de%20cuentas-propio-0F5132)
+![Tarjetas Corporativas](https://img.shields.io/badge/Tarjetas%20Corporativas-10%20emisores-B45309)
 ![Procesamiento local](https://img.shields.io/badge/Procesamiento-100%25%20local-2E7D32)
 ![Licencia](https://img.shields.io/badge/Licencia-Propietaria-red)
 
@@ -27,6 +28,7 @@ Un producto de **Marvaq** · [hello@marvaq.com](mailto:hello@marvaq.com)
 - [Características](#-características)
 - [Imputación contable automática](#-imputación-contable-automática)
 - [Tu propio plan de cuentas](#-tu-propio-plan-de-cuentas)
+- [Tarjetas Corporativas](#-tarjetas-corporativas)
 - [Bancos soportados](#-bancos-soportados)
 - [Descarga e instalación](#-descarga-e-instalación)
 - [Cómo se usa](#-cómo-se-usa)
@@ -56,10 +58,11 @@ Está pensada para **contadores independientes y estudios contables** que necesi
 - 📒 **Tu propio plan de cuentas**: cargá el plan de tu cliente y el Excel sale con **sus códigos**, no con el vocabulario de xExtracta. [Ver detalle ↓](#-tu-propio-plan-de-cuentas)
 - 🏢 **Perfiles de empresa**: lo configurás una vez y lo reusás siempre, sin volver a mapear.
 - ✅ **Control contra el saldo del banco**: si lo leído no cierra contra el saldo que imprime el banco, el resumen te avisa con el archivo y la fecha donde mirar.
+- 💼 **Tarjetas Corporativas** *(Plan Avanzado)*: los resúmenes de tarjeta corporativa a Excel, con las cuotas repartidas por mes y la imputación contable. [Ver detalle ↓](#-tarjetas-corporativas)
 - 🔒 **Procesamiento 100% local**: los datos bancarios se trabajan solo en tu equipo.
 - 🔑 **Licencia por equipo**: una licencia activa por computadora, con **tolerancia offline** para seguir trabajando sin conexión por unos días.
 - 🎁 **Prueba gratuita** autogestionada desde la propia app.
-- 💳 **Suscripción mensual** simple a través de MercadoPago.
+- 💳 **Dos planes mensuales**: Básico, para extractos, y Avanzado, que suma Tarjetas Corporativas. Pago con tarjeta de crédito o débito.
 - ♻️ **Recuperación de licencia** por correo electrónico.
 - 🔐 **Soporte de PDF protegidos con contraseña** y de **extractos con varias cuentas**.
 - 🔄 **Actualización en un clic**: cuando hay versión nueva, la app la baja, la verifica y la instala sola. Sin asistente y sin perder tu licencia ni tu configuración.
@@ -137,6 +140,31 @@ Guardás la configuración con el nombre de la empresa y la próxima vez **la el
 > 🔒 **El plan activo no sobrevive al cierre de la app.** Al abrirla no hay ninguno cargado y lo elegís vos: así el plan de una empresa no puede aplicarse a otra sin que te enteres.
 
 > 📌 **Es opcional.** Sin plan de cuentas, el Excel sale exactamente igual que siempre.
+
+---
+
+## 💼 Tarjetas Corporativas
+
+*Incluido en el Plan Avanzado y en la prueba gratuita.*
+
+Los resúmenes de tarjeta corporativa en PDF, a Excel, igual que los extractos: elegís la carpeta de **una** tarjeta, confirmás el ejercicio y el Excel sale con **cada compra en su fila, las cuotas repartidas por mes** y la imputación contable.
+
+xExtracta reconoce el emisor solo:
+
+| Red | Emisores |
+|---|---|
+| VISA | BBVA · BTF · Galicia · HSBC · Macro · Patagonia · Santander |
+| Mastercard | BBVA |
+| AMEX | American Express Corporate |
+| Otras | Nación (Corporativa Nación Crédito) |
+
+- **Cada importe sale del PDF.** No se proyectan cuotas: una compra en tres cuotas asienta la primera con el resumen de ese mes, y la segunda aparece cuando procesás el siguiente, con el importe exacto que cobró el emisor.
+- **Un mes por columna**, según el ejercicio que confirmás (no siempre va de enero a diciembre). Si falta el resumen de un mes, su columna aparece vacía y lo ves enseguida. Una celda vacía dice que ese mes no hubo cuota, no que se cobró cero.
+- **Compras en dólares.** El resumen trae la compra en USD y cero en pesos: el Excel suma la columna `Cotización` para que cargues la de cada tarjeta, y el importe en pesos y los totales salen por fórmula.
+- **Imputación que aprende.** Los cargos del emisor (sellos, intereses, IVA, Impuesto PAÍS) y los comercios conocidos (combustible, supermercado, telefonía y otros) salen imputados. Un comercio nuevo lo imputás una vez y queda guardado en el perfil de la empresa. Con tu plan de cuentas, salen además tus códigos.
+- **Dos solapas.** `Movimientos`, con una fila por compra, y `Resumen por cuenta`, con los totales por cuenta en fórmulas. `TITULAR`, `CUPON` y `CUOTA` van en columnas propias, para rastrear cada importe hasta la línea del PDF.
+
+> 📌 **Necesita el resumen PDF original**, descargado del home banking. Los escaneos y las fotos no se leen, y xExtracta te avisa qué archivos quedaron afuera.
 
 ---
 
@@ -225,14 +253,24 @@ Abrí **xExtracta**, activá tu licencia (o pedí la prueba gratuita) y seguí l
 - **PDF con contraseña** → agregá un archivo `Contraseña.txt` en la carpeta, con solo la contraseña.
 - **Extractos con varias cuentas** (Patagonia, Macro) → xExtracta exporta la **primera** cuenta del PDF, que es la operativa en pesos. Para trabajar otra, agregá un archivo `CuentaObjetivo.txt` con el **número de cuenta**, el **CBU** (con o sin espacios) o **parte del nombre** (por ejemplo `DOLARES`). Una cuenta por ejecución.
 
+> 💼 **Tarjetas Corporativas se usa igual**, desde su solapa: elegí la carpeta con los resúmenes de una tarjeta, confirmá el ejercicio y presioná **Procesar**. [Ver detalle ↑](#-tarjetas-corporativas)
+
 > 💡 **Antes de un nuevo proceso, limpiá la carpeta:** xExtracta procesa *todos* los PDF que encuentre en cada carpeta. Si no quitás los ya procesados, la próxima vez volverá a procesarlos a todos. La guía rápida en PDF (incluida con tu licencia de prueba) explica todo esto en detalle.
 
 ---
 
 ## 💳 Prueba y suscripción
 
-- **Prueba gratuita de 4 días**, sin cargo.
-- Para continuar, **suscripción mensual de $9.000 ARS** a través de **MercadoPago**.
+- **Prueba gratuita de 4 días**, sin cargo y con todas las funciones, también Tarjetas Corporativas.
+- Para continuar, elegís el plan:
+
+| Plan | Precio | Incluye |
+|---|---|---|
+| **Básico** | $9.000 ARS por mes | Extractos bancarios |
+| **Avanzado** | $14.500 ARS por mes | Extractos bancarios y Tarjetas Corporativas |
+
+- Pagás con **tarjeta de crédito o débito**, y el pago lo procesa **dLocal Go**. Sin contrato: cancelás cuando quieras y conservás el acceso hasta el final del período que ya pagaste.
+- ¿Tenés el Básico y querés Tarjetas Corporativas? Te pasás desde la app, en la solapa del mismo nombre: pagás hoy el Avanzado menos lo que no usaste del Básico.
 - Podés **recuperar tu licencia** por correo en cualquier momento desde la app.
 
 ---
