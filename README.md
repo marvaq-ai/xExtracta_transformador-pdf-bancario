@@ -2,7 +2,7 @@
 
 # 🧾 xExtracta®
 
-**Convertí extractos bancarios en PDF a planillas de Excel —con imputación contable sugerida— de forma automática y 100% local.**
+**Convertí extractos bancarios y resúmenes de Tarjetas Corporativas en PDF a planillas de Excel —con imputación contable sugerida— de forma automática y 100% local.**
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?logo=windows&logoColor=white)
 ![Bancos](https://img.shields.io/badge/Bancos-14-1565C0)
@@ -45,9 +45,11 @@ Un producto de **Marvaq** · [hello@marvaq.com](mailto:hello@marvaq.com)
 
 Pero va un paso más allá de la simple extracción: **cada movimiento sale con una cuenta contable sugerida**, para que arranques desde un borrador ya clasificado en vez de una planilla en blanco.
 
+Desde la **versión 3.0.0** hace lo mismo con los **resúmenes de Tarjetas Corporativas** *(Plan Avanzado)*: cada compra en su fila, las cuotas repartidas por mes y la imputación contable. [Ver detalle ↓](#-tarjetas-corporativas)
+
 Está pensada para **contadores independientes y estudios contables** que necesitan procesar grandes volúmenes de movimientos bancarios sin cargarlos —ni clasificarlos— a mano.
 
-> **Principio clave:** el contenido de tus extractos bancarios **nunca sale de tu equipo**. La aplicación no sube, almacena ni transmite los datos de tus movimientos.
+> **Principio clave:** el contenido de tus extractos bancarios y de tus resúmenes de tarjeta **nunca sale de tu equipo**. La aplicación no sube, almacena ni transmite los datos de tus movimientos.
 
 ---
 
@@ -286,9 +288,9 @@ Abrí **xExtracta**, activá tu licencia (o pedí la prueba gratuita) y seguí l
 
 ## 🔐 Seguridad y privacidad
 
-- 🛡️ **El contenido de tus extractos bancarios se procesa únicamente de forma local** y nunca se transmite ni se sube a ningún servidor. La imputación contable también se calcula **en tu propio equipo**.
+- 🛡️ **El contenido de tus extractos bancarios y de tus resúmenes de tarjeta se procesa únicamente de forma local** y nunca se transmite ni se sube a ningún servidor. La imputación contable también se calcula **en tu propio equipo**, y los comercios que imputás a mano en Tarjetas Corporativas quedan guardados ahí, en el perfil de la empresa.
 - 🔑 Las **contraseñas de los PDF** se usan de manera transitoria, solo para abrir el archivo durante el procesamiento: **no se almacenan ni se transmiten**.
-- 📡 Para validar y administrar la licencia, la aplicación transmite **únicamente datos de licencia** (la clave, un identificador técnico del equipo y la versión de la app) y, al pedir prueba o suscripción, tu **nombre y correo**. En ningún caso viaja el contenido de los extractos.
+- 📡 Para validar y administrar la licencia, la aplicación transmite **únicamente datos de licencia** (la clave, un identificador técnico del equipo y la versión de la app) y, al pedir prueba o suscripción, tu **nombre y correo**. En ningún caso viaja el contenido de los extractos ni de los resúmenes.
 - 🧾 El tratamiento de datos se realiza conforme a la **Ley 25.326** de Protección de Datos Personales (Argentina), bajo el control de la **Agencia de Acceso a la Información Pública (AAIP)**. Podés ejercer tus derechos de acceso, rectificación y supresión escribiendo a [hello@marvaq.com](mailto:hello@marvaq.com).
 
 ---
