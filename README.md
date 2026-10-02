@@ -178,6 +178,13 @@ xExtracta reconoce el emisor solo:
 |---|---|
 | 🟢 **Neuquén** (BPN) | Resumen mensual de cuenta corriente en pesos del Banco Provincia del Neuquén. La columna de débito/crédito se lee por posición y se **verifica contra el saldo que imprime el banco en cada fila**. |
 
+**Novedades de la versión 3.0.1:**
+
+| | |
+|---|---|
+| **Términos y privacidad actualizados** | La primera vez que abras la app después de actualizar, te pide aceptar los [Términos y Condiciones](https://xextracta.marvaq.com/terms.html) y la [Política de Privacidad](https://xextracta.marvaq.com/privacy.html) vigentes. |
+| **Correcciones y ajustes** | Correcciones menores y mejoras en los tiempos de espera de conexión. |
+
 **Novedades de la versión 3.0.0:**
 
 | | |
@@ -290,8 +297,9 @@ Abrí **xExtracta**, activá tu licencia (o pedí la prueba gratuita) y seguí l
 
 - 🛡️ **El contenido de tus extractos bancarios y de tus resúmenes de tarjeta se procesa únicamente de forma local** y nunca se transmite ni se sube a ningún servidor. La imputación contable también se calcula **en tu propio equipo**, y los comercios que imputás a mano en Tarjetas Corporativas quedan guardados ahí, en el perfil de la empresa.
 - 🔑 Las **contraseñas de los PDF** se usan de manera transitoria, solo para abrir el archivo durante el procesamiento: **no se almacenan ni se transmiten**.
-- 📡 Para validar y administrar la licencia, la aplicación transmite **únicamente datos de licencia** (la clave, un identificador técnico del equipo y la versión de la app) y, al pedir prueba o suscripción, tu **nombre y correo**. En ningún caso viaja el contenido de los extractos ni de los resúmenes.
-- 🧾 El tratamiento de datos se realiza conforme a la **Ley 25.326** de Protección de Datos Personales (Argentina), bajo el control de la **Agencia de Acceso a la Información Pública (AAIP)**. Podés ejercer tus derechos de acceso, rectificación y supresión escribiendo a [hello@marvaq.com](mailto:hello@marvaq.com).
+- 📡 Para validar y administrar la licencia, la aplicación transmite **únicamente datos de licencia** (la clave, un identificador técnico del equipo y la versión de la app) y, al pedir prueba o suscripción, tu **nombre y correo**. En ningún caso viaja el contenido de los extractos ni de los resúmenes. Si desde **Soporte** decidís enviarnos los registros técnicos, viajan datos técnicos que pueden incluir nombres de archivos, nunca los PDF ni sus contraseñas.
+- 🤖 xExtracta **no usa inteligencia artificial** para leer tus extractos ni para sugerir la imputación: funciona con reglas propias, en tu computadora.
+- 🧾 El tratamiento de datos se realiza conforme a la **Ley 25.326** de Protección de Datos Personales (Argentina), bajo el control de la **Agencia de Acceso a la Información Pública (AAIP)**. Podés ejercer tus derechos de acceso, rectificación y supresión escribiendo a [hello@marvaq.com](mailto:hello@marvaq.com). El detalle está en la [Política de Privacidad](https://xextracta.marvaq.com/privacy.html) y los [Términos y Condiciones](https://xextracta.marvaq.com/terms.html).
 
 ---
 
